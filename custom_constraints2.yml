@@ -1,0 +1,15 @@
+custom_constraints:
+  state_transition:
+    expression: >
+      ship_location[s,i,t+1] >= ship_location[s,i,t] + ship_moving[s,i,t] - 1
+      for s in ships for i in nodes for t in timesteps[:-1]
+
+  aluminum_flow:
+    expression: >
+      aluminum_onboard[s,t+1] == aluminum_onboard[s,t] + aluminum_loading[s,i,t] * ship_location[s,i,t]
+      for s in ships for i in nodes for t in timesteps
+
+  fuel_consumption:
+    expression: >
+      fuel_onboard[s,t] == fuel_onboard[s,t-1] - ship_moving[s,i,t] * fuel_consumption_rate
+      for s in ships for i in nodes for t in timesteps

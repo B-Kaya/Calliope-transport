@@ -1,0 +1,11 @@
+scenarios:
+  default:
+    timeseries:
+      time:
+        coordinates:
+          - time
+        data:
+          time:
+            interval: 1H  # Time steps are hourly
+            start:   # Start date
+            end:   # End date 
