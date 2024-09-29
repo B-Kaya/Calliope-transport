@@ -1,0 +1,52 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+techs:
+  ##
+  # Supply
+  ##
+
+  fuel_supply:
+    name: "Fuel Supply"
+    color: "#00FF00"
+    base_tech: supply
+    carrier_out: fuel
+    flow_cap_max: .inf  # Unlimited fuel supply
+
+  aluminum_supply:
+    name: "Aluminum Supply"
+    color: "#FF8800"
+    base_tech: supply
+    carrier_out: aluminum
+    flow_cap_max: .inf  # Unlimited aluminum supply]
+
+  ##
+  # Demand
+  ##
+
+  aluminum_demand:
+    name: "Aluminum Demand"
+    color: "#FF0000"
+    base_tech: demand
+    carrier_in: aluminum
+    flow_rate: .inf  # Rate of aluminum demand
+
+  ##
+  # Transmission
+  ##
+
+  aluminum_transmission_line:
+    from: Iceland
+    to: Netherlands
+    name: "Aluminum Transmission Line"
+    color: "#8465A9"
+    base_tech: transmission
+    carrier_in: aluminum
+    carrier_out: aluminum
+    flow_cap_max: .inf  # Maximum capacity for aluminum transmission
+    fuel_consumption_rate: 0.05  # Fuel consumption rate per unit of aluminum transmitted
+    flow_out_eff: 1  # Transmission efficiency
+    lifetime: 20  # Lifetime of the transmission line
+    #cost_flow_cap.data: 200
+    #cost_flow_out.data: 0.002
