@@ -7,5 +7,5 @@ scenarios:
         data:
           time:
             interval: 1H  # Time steps are hourly
-            start: 2024-01-01  # Start date
-            end: 2024-01-07  # End date 
+            start: 2005-01-01  # Start date
+            end: 2005-01-31  # End date 
