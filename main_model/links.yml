@@ -1,0 +1,6 @@
+links:
+  ISL,NLD:
+    techs:
+      transmission_line:
+        constraints:
+          distance: 2000  # Distance between Iceland and the Netherlands (in km)

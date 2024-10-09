@@ -1,0 +1,7 @@
+custom_constraints:
+  transmission_delay:
+    expression: >
+      aluminum_in_transit[t+d] == aluminum_supply[t] for t in timesteps[:-d]  # Ensure delay between sending and receiving
+  aluminum_flow:
+    expression: >
+      aluminum_demand[t] == aluminum_in_transit[t] for t in timesteps[d:]  # Aluminum demand is satisfied with a delay

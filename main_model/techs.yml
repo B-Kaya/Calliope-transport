@@ -1,0 +1,32 @@
+techs:
+  fuel_supply:
+    essentials:
+      name: "Fuel Supply"
+      carrier: fuel
+      color: "#00FF00"
+    constraints:
+      e_cap.max: inf  # Unlimited fuel supply
+
+  aluminum_supply:
+    essentials:
+      name: "Aluminum Supply"
+      carrier: aluminum
+      color: "#FF8800"
+    constraints:
+      e_cap.max: inf  # Unlimited aluminum supply
+
+  aluminum_demand:
+    essentials:
+      name: "Aluminum Demand"
+      carrier: aluminum
+      color: "#FF0000"
+    constraints:
+      r: 10  # Rate of aluminum demand
+  
+  transmission_line:
+    essentials:
+      name: "Aluminum Transmission Line"
+      carrier: aluminum
+    constraints:
+      e_cap.max: 50  # Maximum capacity for aluminum transmission
+      r: 0.05  # Fuel consumption rate per unit of aluminum transmitted
