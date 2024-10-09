@@ -1,1 +1,1 @@
-
+Work-in-progress for a 2-node system that has continuous supply of fuel and aluminium at Iceland and continuous demand for aluminium in The Netherlands, with a transmission line between the two that consumes fuel to transmit aluminium.
