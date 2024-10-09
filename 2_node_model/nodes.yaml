@@ -9,10 +9,8 @@ nodes:
     techs:
       fuel_supply:
         carrier: fuel
-        base tech: supply
       aluminum_supply:
         carrier: aluminum
-        base tech: supply
 
   Netherlands:
     latitude: 52.3676
@@ -20,6 +18,3 @@ nodes:
     techs:
       aluminum_demand:
         carrier: aluminum
-        base tech: demand
-        constraints:
-          r: 10  # Aluminum demand rate
