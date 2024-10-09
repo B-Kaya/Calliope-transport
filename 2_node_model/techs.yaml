@@ -2,10 +2,64 @@
 # TECHNOLOGY DEFINITIONS
 ##
 
+tech_groups:
+  cost_dim_setter:
+    cost_flow_cap:
+      data: null
+      index: monetary
+      dims: costs
+    cost_flow_in:
+      data: null
+      index: monetary
+      dims: costs
+    cost_flow_out:
+      data: null
+      index: monetary
+      dims: costs
+    cost_storage_cap:
+      data: null
+      index: monetary
+      dims: costs
+    cost_area_use:
+      data: null
+      index: monetary
+      dims: costs
+    cost_source_cap:
+      data: null
+      index: monetary
+      dims: costs
+    cost_interest_rate:
+      data: 0.10
+      index: monetary
+      dims: costs
+
 techs:
   ##
   # Supply
   ##
+
+  csp:
+    name: "Concentrating solar power"
+    color: "#F9CF22"
+    base_tech: supply
+    inherit: cost_dim_setter
+    carrier_out: power
+    source_unit: per_area
+    include_storage: True
+    storage_cap_max: 614033
+    flow_cap_per_storage_cap_max: 1
+    storage_loss: 0.002
+    flow_out_eff: 0.4
+    flow_out_parasitic_eff: 0.9
+    area_use_max: .inf
+    flow_cap_max: 10000
+    lifetime: 25
+
+    cost_storage_cap.data: 50
+    cost_area_use.data: 200
+    cost_source_cap.data: 200
+    cost_flow_cap.data: 1000
+    cost_flow_out.data: 0.002
 
   fuel_supply:
     name: "Fuel Supply"
@@ -19,11 +73,17 @@ techs:
     color: "#FF8800"
     base_tech: supply
     carrier_out: aluminum
-    flow_cap_max: .inf  # Unlimited aluminum supply]
+    flow_cap_max: .inf  # Unlimited aluminum supply
 
   ##
   # Demand
   ##
+
+  demand_power:
+    name: "Power demand"
+    color: "#072486"
+    base_tech: demand
+    carrier_in: power
 
   aluminum_demand:
     name: "Aluminum Demand"
