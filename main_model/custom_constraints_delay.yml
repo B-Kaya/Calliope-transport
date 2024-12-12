@@ -1,0 +1,13 @@
+foreach:
+- nodes
+- techs
+- timesteps
+where: (tech=aluminium_transmission_line)
+equations:
+- expression: "aluminium_received == sum(aluminium_sent_previous_step, over=timesteps)"
+sub_expressions:
+  aluminium_sent_previous_step:
+  - where: "timesteps=get_val_at_index(timesteps=delay) AND delay > 0"
+    expression: aluminium_sent
+  - where: NOT timesteps=get_val_at_index(timesteps=delay)
+    expression: '0'
