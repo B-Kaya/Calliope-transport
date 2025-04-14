@@ -1,0 +1,48 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+
+techs:
+
+  ##
+  # Supply
+  ##
+
+  fuel_supply:
+    name: "Fuel Supply"
+    color: "#E37A72"
+    base_tech: supply
+    carrier_out: fuel
+    flow_cap_max: .inf
+
+  aluminium_supply:
+    name: "Aluminium Supply"
+    color: "#F9CF22"
+    base_tech: supply
+    carrier_out: aluminium
+    flow_cap_max: .inf
+
+  ##
+  # Demand
+  ##
+
+  aluminium_demand:
+    name: "Aluminium Demand"
+    color: "#072486"
+    base_tech: demand
+    carrier_in: aluminium
+
+  ##
+  # Transmission
+  ##
+
+  aluminium_transport_tech:
+    link_from: Iceland
+    link_to: Netherlands
+    name: "Aluminium Transport"
+    color: "#8465A9"
+    base_tech: transmission
+    carrier_in: aluminium
+    carrier_out: aluminium
+    flow_cap_max: 20000 # Maximum capacity for aluminium transmission
+    flow_out_eff: 1  # Transmission efficiency
