@@ -1,5 +1,0 @@
-parameters,cost_flow_cap,cost_storage_cap,cost_area_use,cost_source_cap,cost_flow_in,cost_flow_out
-comment,USD per kW,USD per kWh storage capacity,USD per m2,USD per kW,USD per kWh,USD per kWh
-fuel_supply,750,,,,0.02,
-aluminium_supply,1000,50,200,200,,0.002
-aluminium_transmission_line,200,,,,,0.002
