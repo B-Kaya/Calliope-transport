@@ -1,0 +1,18 @@
+##
+# nodes
+##
+
+nodes:
+  Iceland:
+    latitude: 64.1355
+    longitude: -21.8954
+    techs:
+      aluminium_supply:
+        carrier: aluminium
+
+  Netherlands:
+    latitude: 52.3676
+    longitude: 4.9041
+    techs:
+      aluminium_demand:
+        carrier: aluminium
