@@ -1,0 +1,9 @@
+constraints:
+  fuel_usage_for_transport:
+    description: "Link fuel usage to aluminium transport: fuel_in = 0.05 * aluminium_transported"
+    foreach: [techs, timesteps]
+    where: techs=aluminium_transport_tech AND fuel_supply
+    equations:
+      - expression: >
+          flow_out[nodes=Iceland, carriers=fuel] ==
+          0.05 * flow_out[nodes=Iceland, carriers=aluminium]
