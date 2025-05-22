@@ -21,9 +21,30 @@ constraints:
   shipping_capacity_link:
     description: "Allow aluminium flow out of Iceland only when a ship departs (enforce discrete ship usage)"
     foreach: [nodes, techs, timesteps]
-    where: techs=aluminium_transport_tech
+    where: techs=aluminium_transport_tech AND nodes=Iceland
     equations:
-      - expression: flow_out[nodes=Iceland, carriers=aluminium] <= ship_depart * 20000 # Use the max flow of the tech as capacity, 20000 in this case
+      - expression: flow_in[carriers=aluminium] <= ship_depart * flow_cap_max
+
+  ship_limit:
+    description: "There's only one ship so you can only have one departure every 144 hours"
+    foreach: [nodes, techs, timesteps]
+    where: techs=aluminium_transport_tech AND nodes=Iceland
+    equations:
+      - expression: sum_next_n(ship_depart, timesteps, 144) <= 1
+
+  ship_availability_limit:
+    description: "You can only depart if there is availability"
+    foreach: [nodes, techs, timesteps]
+    where: techs=aluminium_transport_tech AND nodes=Iceland
+    equations:
+      - expression: ship_depart <= $prev_available
+    sub_expressions:
+      prev_available:
+        # For t=0, set initial number of ships; for t>0, use previous timestep's availability
+        - where: timesteps = get_val_at_index(timesteps=0) # first timestep
+          expression: "1" # number of ships
+        - where: NOT timesteps = get_val_at_index(timesteps=0)
+          expression: roll(ship_available, timesteps=1) # ship_available at t-1
 
   ship_roundtrip_cycle:
     description: >
