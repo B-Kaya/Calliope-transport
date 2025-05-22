@@ -11,7 +11,7 @@ config:
     broadcast_param_data: true
 
   build:
-    ensure_feasibility: true
+    ensure_feasibility: false
     mode: plan
     add_math: [custom_constraints_state.yml, custom_constraints_delay.yml]
 
