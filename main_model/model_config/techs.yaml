@@ -31,6 +31,12 @@ techs:
     base_tech: demand
     carrier_in: aluminium
 
+  fuel_necessity:
+    name: "Fuel Necessity"
+    color: "#87CEEB"
+    base_tech: demand
+    carrier_in: fuel
+
   ##
   # Transmission
   ##
@@ -44,5 +50,17 @@ techs:
     base_tech: transmission
     carrier_in: aluminium
     carrier_out: aluminium
-    flow_cap_max: 20000 # Maximum capacity for aluminium transmission
-    flow_out_eff: 1 # Transmission efficiency
+    flow_cap_max: 3000 # Maximum storage capacity for aluminium transport
+    flow_out_eff: 1
+
+  fuel_consumption_tech:
+    link_from: Iceland
+    link_to: Netherlands
+    one_way: true
+    name: "Fuel Consumption"
+    color: "#3B61E3"
+    base_tech: transmission
+    carrier_in: fuel
+    carrier_out: fuel
+    flow_cap_max: 7 # Hourly fuel consumption during aluminium transport
+    flow_out_eff: 1

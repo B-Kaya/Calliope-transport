@@ -22,3 +22,9 @@ nodes:
           data: -1
           dims: costs
           index: monetary
+      fuel_necessity:
+        carrier: fuel
+        cost_flow_in:
+          data: -1
+          dims: costs
+          index: monetary

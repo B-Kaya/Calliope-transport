@@ -43,7 +43,9 @@ constraints:
         # For t=0, set initial number of ships; for t>0, use previous timestep's availability
         - where: timesteps = get_val_at_index(timesteps=0) # first timestep
           expression: "1" # number of ships
-        - where: NOT timesteps = get_val_at_index(timesteps=0)
+        - where: timesteps >= get_val_at_index(timesteps=-72) # no ship departs the last 72 hours
+          expression: "0"
+        - where: NOT timesteps = get_val_at_index(timesteps=0) AND NOT timesteps >= get_val_at_index(timesteps=-72)
           expression: roll(ship_available, timesteps=1) # ship_available at t-1
 
   ship_roundtrip_cycle:
@@ -65,3 +67,5 @@ constraints:
         # ship_returned at time t equals ship_depart at time t - 72 (a ship that left 72 hours ago returns now)
         - expression: default_if_empty(roll(ship_depart, timesteps=144), default=0)
         # use 2*72 = 144 for the return (round-trip). The roll shifts departures forward by 144h.
+
+
