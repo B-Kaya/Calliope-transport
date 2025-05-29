@@ -16,3 +16,7 @@ nodes:
     techs:
       aluminium_demand:
         carrier: aluminium
+        cost_flow_in:
+          data: -1
+          dims: costs
+          index: monetary

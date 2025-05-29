@@ -3,7 +3,6 @@
 ##
 
 techs:
-
   ##
   # Supply
   ##
@@ -32,10 +31,11 @@ techs:
   aluminium_transport_tech:
     link_from: Iceland
     link_to: Netherlands
+    one_way: true
     name: "Aluminium Transport"
     color: "#8465A9"
     base_tech: transmission
     carrier_in: aluminium
     carrier_out: aluminium
-    flow_cap_max: 20000 # Maximum capacity for aluminium transmission
-    flow_out_eff: 1  # Transmission efficiency
+    flow_cap_max: 3000 # Maximum storage capacity for aluminium transport
+    flow_out_eff: 1

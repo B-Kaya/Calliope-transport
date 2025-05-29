@@ -11,7 +11,7 @@ config:
     broadcast_param_data: true
 
   build:
-    ensure_feasibility: true
+    ensure_feasibility: false
     mode: plan
 
   solve:

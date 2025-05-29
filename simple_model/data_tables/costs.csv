@@ -1,4 +1,3 @@
-parameters,cost_flow_cap,cost_storage_cap,cost_area_use,cost_source_cap,cost_flow_in,cost_flow_out
-comment,USD per kW,USD per kWh storage capacity,USD per m2,USD per kW,USD per kWh,USD per kWh
-aluminium_supply,,,,,,0.005
-aluminium_transmission_line,,,,,,
+parameters,cost_flow_in,cost_flow_out
+comment,USD per Mton,USD per Mton
+aluminium_supply,0.0025,
