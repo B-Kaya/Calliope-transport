@@ -14,11 +14,11 @@ techs:
     carrier_out: fuel
     flow_cap_max: .inf
 
-  aluminium_supply:
-    name: "Aluminium Supply"
+  renewable_electricity:
+    name: "Renewable Electricity"
     color: "#F9CF22"
     base_tech: supply
-    carrier_out: aluminium
+    carrier_out: electricity
     flow_cap_max: .inf
 
   ##
@@ -38,6 +38,18 @@ techs:
     carrier_in: fuel
 
   ##
+  # Conversion
+  ##
+
+  aluminium_smelter:
+    name: "Aluminium smelter"
+    color: "#8E2999"
+    base_tech: conversion
+    carrier_in: electricity
+    carrier_out: aluminium
+    flow_out_eff: 0.96
+
+  ##
   # Transmission
   ##
 
@@ -50,7 +62,7 @@ techs:
     base_tech: transmission
     carrier_in: aluminium
     carrier_out: aluminium
-    flow_cap_max: 3000 # Maximum storage capacity for aluminium transport
+    flow_cap_max: 3000 # Maximum storage capacity for aluminium transport in Mton
     flow_out_eff: 1
 
   fuel_consumption_tech:
@@ -62,5 +74,5 @@ techs:
     base_tech: transmission
     carrier_in: fuel
     carrier_out: fuel
-    flow_cap_max: 7 # Hourly fuel consumption during aluminium transport
+    flow_cap_max: 7 # Hourly fuel consumption during aluminium transport in Mton
     flow_out_eff: 1

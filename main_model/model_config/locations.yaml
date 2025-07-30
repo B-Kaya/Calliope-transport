@@ -9,8 +9,9 @@ nodes:
     techs:
       fuel_supply:
         carrier: fuel
-      aluminium_supply:
-        carrier: aluminium
+      renewable_electricity:
+        carrier: electricity
+      aluminium_smelter:
 
   Netherlands:
     latitude: 52.3676

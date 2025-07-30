@@ -1,4 +1,4 @@
 parameters,cost_flow_in,cost_flow_out
 comment,USD per Mton,USD per Mton
 fuel_supply,0.0005,
-aluminium_supply,0.0025,
+renewable_electricity,0.0025,
