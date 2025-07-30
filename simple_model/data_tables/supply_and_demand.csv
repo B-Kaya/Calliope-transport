@@ -1,6 +1,6 @@
-comment,infinite aluminium supply,infinite aluminium demand
+comment,infinite electricity supply,infinite electricity demand
 nodes,Iceland,Netherlands
-techs,aluminium_supply,aluminium_demand
+techs,renewable_electricity,electricity_demand
 parameters,source_use_max,sink_use_max
 timesteps,,
 2005-01-01 00:00,999999,999999

@@ -7,35 +7,35 @@ techs:
   # Supply
   ##
 
-  aluminium_supply:
-    name: "Aluminium Supply"
+  renewable_electricity:
+    name: "Renewable Electricity"
     color: "#F9CF22"
     base_tech: supply
-    carrier_out: aluminium
+    carrier_out: electricity
     flow_cap_max: .inf
 
   ##
   # Demand
   ##
 
-  aluminium_demand:
-    name: "Aluminium Demand"
+  electricity_demand:
+    name: "Electricity Demand"
     color: "#072486"
     base_tech: demand
-    carrier_in: aluminium
+    carrier_in: electricity
 
   ##
   # Transmission
   ##
 
-  aluminium_transport_tech:
+  undersea_cable_transport_tech:
     link_from: Iceland
     link_to: Netherlands
     one_way: true
-    name: "Aluminium Transport"
+    name: "Electricity Transport"
     color: "#8465A9"
     base_tech: transmission
-    carrier_in: aluminium
-    carrier_out: aluminium
-    flow_cap_max: 3000 # Maximum storage capacity for aluminium transport
-    flow_out_eff: 1
+    carrier_in: electricity
+    carrier_out: electricity
+    flow_cap_max: 1 # Maximum flow capacity for renewable transmission in GWh
+    flow_out_eff: 0.958

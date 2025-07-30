@@ -7,15 +7,15 @@ nodes:
     latitude: 64.1355
     longitude: -21.8954
     techs:
-      aluminium_supply:
-        carrier: aluminium
+      renewable_electricity:
+        carrier: electricity
 
   Netherlands:
     latitude: 52.3676
     longitude: 4.9041
     techs:
-      aluminium_demand:
-        carrier: aluminium
+      electricity_demand:
+        carrier: electricity
         cost_flow_in:
           data: -1
           dims: costs
